@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rico Tegar Hermawan | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            line-height: 1.7;
+        }
+
+        :root {
+            --blue: #38bdf8;
+            --dark: #0f172a;
+            --card: #1e293b;
+            --text: #cbd5e1;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #111c30;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #334155;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: var(--blue);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: var(--blue);
+        }
+
+        section {
+            padding: 85px 10%;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .hero small {
+            color: var(--blue);
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: clamp(35px, 6vw, 65px);
+            line-height: 1.2;
+            margin: 15px 0;
+        }
+
+        .hero h2 {
+            color: var(--blue);
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: var(--text);
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: var(--blue);
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            color: var(--blue);
+            font-size: 14px;
+            letter-spacing: 3px;
+        }
+
+        .heading {
+            font-size: 35px;
+            margin: 8px 0 30px;
+        }
+
+        .about-box {
+            background: var(--card);
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid #334155;
+        }
+
+        .about-box p {
+            color: var(--text);
+            margin-bottom: 15px;
+        }
+
+        .biodata {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .biodata div {
+            background: #263449;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .biodata span {
+            color: var(--blue);
+            font-size: 13px;
+        }
+
+        .biodata p {
+            color: white;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            transition: .3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--blue);
+        }
+
+        .skill-card h3 {
+            color: var(--blue);
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: var(--text);
+        }
+
+        .journey-card {
+            background: var(--card);
+            border-left: 4px solid var(--blue);
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .journey-card h3 {
+            color: var(--blue);
+        }
+
+        .journey-card p {
+            color: var(--text);
+        }
+
+        .contact-box {
+            background: var(--card);
+            padding: 35px;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        .contact-box p {
+            color: var(--text);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #111c30;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        @media(max-width: 650px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 13px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .biodata,
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 65px 7%;
+            }
+
+            .heading {
+                font-size: 28px;
+            }
+        }
+
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero {
+            animation: muncul 1s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">RICO.</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#journey">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+        <small>HELLO, WELCOME TO MY PORTFOLIO</small>
+
+        <h1>I'm Rico Tegar Hermawan.</h1>
+
+        <h2>Mahasiswa UNINDRA</h2>
+
+        <p>
+            Selamat datang di website portofolio pribadi saya.
+            Saya adalah mahasiswa Universitas Indraprasta PGRI
+            yang sedang menempuh pendidikan di kelas X5D.
+            Saya memiliki semangat untuk terus belajar,
+            berkembang, dan mendapatkan pengalaman baru.
+        </p>
+
+        <a href="#about" class="btn">Explore My Profile</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="section-title">GET TO KNOW ME</div>
+
+        <h2 class="heading">About Me</h2>
+
+        <div class="about-box">
+            <h2>Rico Tegar Hermawan</h2>
+
+            <p>
+                Saya merupakan mahasiswa Universitas
+                Indraprasta PGRI (UNINDRA).
+                Saat ini saya berada di kelas X5D.
+            </p>
+
+            <p>
+                Saya percaya bahwa setiap proses belajar
+                merupakan kesempatan untuk mengembangkan
+                kemampuan, menambah wawasan, dan membangun
+                masa depan yang lebih baik.
+            </p>
+
+            <div class="biodata">
+                <div>
+                    <span>Nama Lengkap</span>
+                    <p>Rico Tegar Hermawan</p>
+                </div>
+
+                <div>
+                    <span>Nomor Pokok Mahasiswa</span>
+                    <p>202443500350</p>
+                </div>
+
+                <div>
+                    <span>Universitas</span>
+                    <p>UNINDRA</p>
+                </div>
+
+                <div>
+                    <span>Kelas</span>
+                    <p>X5D</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="section-title">WHAT I CAN DO</div>
+
+        <h2 class="heading">My Skills & Interests</h2>
+
+        <div class="skills">
+
+            <div class="skill-card">
+                <h3>HTML & CSS</h3>
+                <p>
+                    Mempelajari dasar pembuatan dan
+                    desain tampilan website.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Java Programming</h3>
+                <p>
+                    Mengenal dasar pemrograman Java
+                    dan konsep pemrograman berorientasi objek.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Microsoft Office</h3>
+                <p>
+                    Mempelajari penggunaan Word,
+                    Excel, dan PowerPoint.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Teamwork</h3>
+                <p>
+                    Mengembangkan kemampuan bekerja sama,
+                    berkomunikasi, dan bertukar ide.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="journey">
+        <div class="section-title">MY JOURNEY</div>
+
+        <h2 class="heading">Education</h2>
+
+        <div class="journey-card">
+            <h3>Universitas Indraprasta PGRI</h3>
+
+            <p>
+                Mahasiswa aktif UNINDRA
+                <br>
+                Kelas: X5D
+                <br>
+                NPM: 202443500350
+            </p>
+
+            <p>
+                Terus belajar dan mengembangkan
+                kemampuan melalui pengalaman akademik.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="section-title">LET'S CONNECT</div>
+
+        <h2 class="heading">Contact Me</h2>
+
+        <div class="contact-box">
+            <h2>Thank You!</h2>
+
+            <p>
+                Terima kasih telah mengunjungi website
+                portofolio saya. Semoga perjalanan belajar
+                dan pengembangan diri ini dapat terus
+                memberikan pengalaman yang bermanfaat.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2026 Rico Tegar Hermawan.
+            All Rights Reserved.
+        </p>
+        <p>Made with HTML & CSS</p>
+    </footer>
+
+</body>
+</html>
